@@ -215,12 +215,12 @@ public class DataBaseService {
 
     private void insertDataIntoTable(Map<String, String> map, String table, String path){
 
-        final String pId = "p_id";
-        final String age = "age";
-        final String id = "id";
-        final String code = "code";
-        final String number = "number";
-        final String pName = "p_name";
+        final String P_ID = "p_id";
+        final String AGE = "age";
+        final String ID = "id";
+        final String CODE = "code";
+        final String NUMBER = "number";
+        final String P_NAME = "p_name";
 
         File file = new File(path + table + DB_FILE_SUFFIX);
         FileInputStream fi;
@@ -263,10 +263,10 @@ public class DataBaseService {
                     if(keyQuery.equals(keyTable)){
                         Integer columnPosition = tableEntry.getValue();
                         Cell newCell = row.createCell(columnPosition);
-                        if(keyTable.equalsIgnoreCase(pId) || keyTable.equalsIgnoreCase(age) || keyTable.equalsIgnoreCase(id)
-                                || keyTable.equalsIgnoreCase(code) || keyTable.equalsIgnoreCase(number)){
+                        if(keyTable.equalsIgnoreCase(P_ID) || keyTable.equalsIgnoreCase(AGE) || keyTable.equalsIgnoreCase(ID)
+                                || keyTable.equalsIgnoreCase(CODE) || keyTable.equalsIgnoreCase(NUMBER)){
                             newCell.setCellValue(new Double(entry.getValue()));
-                        }else if(keyTable.equalsIgnoreCase(pName)){
+                        }else if(keyTable.equalsIgnoreCase(P_NAME)){
                             newCell.setCellValue(entry.getValue());
                         }
                     }
